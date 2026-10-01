@@ -1,0 +1,39 @@
+{
+  "name": "@freakynit/autobox",
+  "version": "0.1.0",
+  "description": "MCP (stdio only) sandbox execution via V8 isolates + macOS seatbelt. M-series Macs only.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freakynit/dev-autobox.git"
+  },
+  "homepage": "https://github.com/freakynit/dev-autobox#readme",
+  "author": "Nitin Bansal",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "autobox": "dist/index.js"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc && node scripts/build-native.mjs",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "isolated-vm": "^6.0.1",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
