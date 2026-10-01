@@ -4,12 +4,13 @@ An MCP server that allows AI agents to sandbox themselves, and gives them a fast
 
 ## Autobox was built around two observations:
 
-1. Sandboxing tools exist and work well. Yet, leaving a handful few developers, most do not use them. Underlying issue is the friction that comes with setting up these sandboxes, however small that maybe.
-2. LLM's generally do not write harmful code, nor do they take harmful steps.
+1. Sandboxes already exist and work well. But almost nobody uses them. The blocker isn't the technology, it's the setup friction — however small it looks on paper, it's enough that people skip it entirely.
 
-Autobox tries to fix the first by using second. 
+2. LLMs mostly don't write harmful code or take destructive steps. They're not adversarial by default.
 
-- Is it perfect? Of course not. 
+Autobox bets on the second observation to remove the first. Instead of asking you to configure a sandbox, it's just there: every tool call carries its own permissions, and anything you don't explicitly allow is denied.
+
+- Is it perfect? Of course not — seatbelt filesystem rules are best-effort, and the strong isolation is the V8 path. 
 - Is it better than not usign sandboxes at all? A 100% yes.
 
 **Autobox reduces the probability of things going wrong for people who don't use sandboxes, without requiring any effor on their part.**
